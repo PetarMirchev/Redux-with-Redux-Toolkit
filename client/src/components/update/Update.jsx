@@ -12,7 +12,7 @@ const Update = () => {
   return (
     <div className='update'>
         <div className="updateWrapper">
-            <h3 className='updateWrapper'>Update Your Account</h3>
+            <h3 className='updateTitle'>Update Your Account</h3>
             <Warning/>
             <button className='delete'>Delete Account</button>
             <div className="updateContainer">
