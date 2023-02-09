@@ -2,6 +2,7 @@ import React from 'react';
 import './update.css';
 import Warning from '../warning/Warning';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
 const Update = () => {
@@ -10,7 +11,7 @@ const Update = () => {
     const [email,setEmail] = useState('');
     //console.log(user, email);
 
-    
+     const userInfo = useSelector( (state) => state.user);
 
   return (
     <div className='update'>
@@ -32,11 +33,11 @@ const Update = () => {
                     </div>
                     <div className="formItem">
                         <label>Username</label>
-                        <input  className='formInput' type="text" placeholder='NameX' onChange={(e) => setUser(e.target.value)}/>
+                        <input  className='formInput' type="text" placeholder={userInfo.name} onChange={(e) => setUser(e.target.value)}/>
                     </div>
                     <div className="formItem">
                         <label>Email</label>
-                        <input  className='formInput' type="email" placeholder='hzdkv@example.com' onChange={(e) => setEmail(e.target.value)}/>
+                        <input  className='formInput' type="email" placeholder={userInfo.email} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="formItem">
                         <label>Password</label>
