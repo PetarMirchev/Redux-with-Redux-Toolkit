@@ -9,6 +9,9 @@ const Update = () => {
     const [user,setUser] = useState('');
     const [email,setEmail] = useState('');
 
+   
+    console.log();
+
   return (
     <div className='update'>
         <div className="updateWrapper">
@@ -29,11 +32,11 @@ const Update = () => {
                     </div>
                     <div className="formItem">
                         <label>Username</label>
-                        <input  className='formInput' type="text" placeholder='NameX'/>
+                        <input  className='formInput' type="text" placeholder='NameX' onChange={(e) => setUser(e.target.value)}/>
                     </div>
                     <div className="formItem">
                         <label>Email</label>
-                        <input  className='formInput' type="email" placeholder='hzdkv@example.com'/>
+                        <input  className='formInput' type="email" placeholder='hzdkv@example.com' onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="formItem">
                         <label>Password</label>
