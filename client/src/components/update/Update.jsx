@@ -8,9 +8,9 @@ const Update = () => {
 
     const [user,setUser] = useState('');
     const [email,setEmail] = useState('');
+    //console.log(user, email);
 
-   
-    console.log();
+    
 
   return (
     <div className='update'>
@@ -27,7 +27,7 @@ const Update = () => {
                             src="https://images.pexels.com/photos/3024627/pexels-photo-3024627.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                             alt=""
                             />
-                            <spam className='change'>Change</spam>
+                            <span className='change'>Change</span>
                         </div>
                     </div>
                     <div className="formItem">
