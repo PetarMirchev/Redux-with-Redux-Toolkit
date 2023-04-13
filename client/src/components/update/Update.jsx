@@ -2,7 +2,7 @@ import React from 'react';
 import './update.css';
 import Warning from '../warning/Warning';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const Update = () => {
@@ -11,7 +11,14 @@ const Update = () => {
     const [email,setEmail] = useState('');
     //console.log(user, email);
 
-     const userInfo = useSelector( (state) => state.user);
+    const userInfo = useSelector( (state) => state.user);
+    const dispatch = useDispatch();
+
+
+    const handleUpdate = (e) => {
+        e.preventDefault();
+    }
+    
 
   return (
     <div className='update'>
@@ -43,7 +50,7 @@ const Update = () => {
                         <label>Password</label>
                         <input  className='formInput' type="password" placeholder='Password'/>
                     </div>
-                    <button className='updateButton'>Update</button>
+                    <button className='updateButton' onClick={handleUpdate}>Update</button>
                 </form>
             </div>
         </div>
