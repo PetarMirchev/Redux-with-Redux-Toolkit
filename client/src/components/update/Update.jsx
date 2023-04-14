@@ -3,13 +3,14 @@ import './update.css';
 import Warning from '../warning/Warning';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { remove, update, addHello } from '../../redux/userSlice';
 
 
 const Update = () => {
 
-    const [user,setUser] = useState('');
-    const [email,setEmail] = useState('');
-    //console.log(user, email);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    //console.log(name, email);
 
     const userInfo = useSelector( (state) => state.user);
     const dispatch = useDispatch();
@@ -17,15 +18,21 @@ const Update = () => {
 
     const handleUpdate = (e) => {
         e.preventDefault();
+        dispatch(addHello({name, email}));
+    } 
+
+    const handleDelete = (e) => {
+        e.preventDefault();
+        dispatch(remove());
     }
-    
+
 
   return (
     <div className='update'>
         <div className="updateWrapper">
             <h3 className='updateTitle'>Update Your Account</h3>
             <Warning/>
-            <button className='delete'>Delete Account</button>
+            <button className='delete' onClick={handleDelete}>Delete Account</button>
             <div className="updateContainer">
                 <form>
                     <div className="formItem">
@@ -40,7 +47,7 @@ const Update = () => {
                     </div>
                     <div className="formItem">
                         <label>Username</label>
-                        <input  className='formInput' type="text" placeholder={userInfo.name} onChange={(e) => setUser(e.target.value)}/>
+                        <input  className='formInput' type="text" placeholder={userInfo.name} onChange={(e) => setName(e.target.value)}/>
                     </div>
                     <div className="formItem">
                         <label>Email</label>

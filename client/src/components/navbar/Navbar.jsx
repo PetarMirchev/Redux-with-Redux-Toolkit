@@ -3,10 +3,12 @@ import "./navbar.css";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useSelector } from 'react-redux';
 
-const Navbar = () => {
+export default function Navbar(){
 
   // pass user "nameX" from userSlice
   const name = useSelector( (state) => state.user.name);
+
+  console.log(`Navbar is re-rendered!`);
 
   return (
     <div className='navbar'>
@@ -39,5 +41,3 @@ const Navbar = () => {
     </div>
   )
 };
-
-export default Navbar;

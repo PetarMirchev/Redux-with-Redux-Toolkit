@@ -11,10 +11,15 @@ export const userSlice = createSlice({
             //action.payload = {"Budala69", 'mySpamEmail@gmail.com'} 
             state.name = action.payload.name;
             state.email = action.payload.email;
-        }
-    }
+        },
+        remove: (state) => (state = {}), //delete user   //state = null; 
+
+        addHello: (state, action) => {
+            state.name = 'Hello ' + action.payload.name;
+        }    
+    },
 });
 
-export const {update} = userSlice.actions;
+export const {update, remove , addHello} = userSlice.actions;
 export default userSlice.reducer;
 
