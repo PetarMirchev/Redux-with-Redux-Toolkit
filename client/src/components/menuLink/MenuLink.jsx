@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 const MenuLink = ({icon, text}) => {
 
-  const name = useSelector( (state) => state.user.name); // passed user from userSlice
+  const name = useSelector( (state) => state.user.userInfo.name); // passed user from userSlice
 
 
   return (

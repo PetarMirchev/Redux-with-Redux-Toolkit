@@ -5,12 +5,12 @@ import Recommendation from '../recommendation/Recommendation';
 
 const Rightbar = () => {
   return (
-    <div className='rightbsar'>
-        <div className="rightbarWrapper">
-            <Recommendation type='user'/>
-            <Recommendation type='popular'/>
-            <Recommendation type='editor'/>
-            <button className='rightButton'>
+    <div className="rightbar">
+      <div className="rightbarWrapper">
+          <Recommendation type="user" />
+          <Recommendation type="popular" />
+          <Recommendation type="editor" />
+            <button className="rightButton">
                 See More
                 <ArrowDropDownIcon/>
             </button>

@@ -73,8 +73,8 @@ form{
 }
 
 .updateButton:disabled{
-    cursor: pointer;
-    background-color: rgb(136, 168, 168);
+    cursor: not-allowed;
+    background-color: rgb(246, 13, 13);
 }
 
 .error{

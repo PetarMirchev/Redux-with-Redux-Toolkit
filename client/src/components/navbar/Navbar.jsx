@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 export default function Navbar(){
 
   // pass user "nameX" from userSlice
-  const name = useSelector( (state) => state.user.name);
+  const name = useSelector( (state) => state.user.userInfo.name);
 
   console.log(`Navbar is re-rendered!`);
 
